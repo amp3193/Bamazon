@@ -10,66 +10,77 @@
         "name": "Large Dog Bed",
         "department": "Dogs",
         "price": 29.99,
+        "imgSrc": "images/dogBed.jpg",
         "stock_quantity": 15
     },
     {
         "name": "Dog Toy Assortment",
         "department": "Dogs",
         "price": 18.99,
+        "imgSrc": "images/dogToys.jpg",
         "stock_quantity": 15
     },
     {
         "name": "No Pull Dog Harness",
         "department": "Dogs",
         "price": 18.99,
+        "imgSrc": "images/dogHarness.jpg",
         "stock_quantity": 15
     },
     {
         "name": "Cat Water Fountain",
         "department": "Cats",
         "price": 28.99,
+        "imgSrc": "images/catFountain.jpg",
         "stock_quantity": 15
     },
     {
         "name": "Basic Cat Tree",
         "department": "Cats",
         "price": 24.99,
+        "imgSrc": "images/catTree.jpg",
         "stock_quantity": 15
     },
     {
         "name": "Cat Teaser Wand",
         "department": "Cats",
         "price": 8.99,
+        "imgSrc": "images/catToys.jpg",
         "stock_quantity": 15
     },
     {
         "name": "Soft Sided Cat Carrier",
         "department": "Cats",
         "price": 34.99,
+        "imgSrc": "images/catCarrier.jpg",
         "stock_quantity": 15
     },
     {
         "name": "Natural Rabbit Bed",
         "department": "Small Mammals",
         "price": 8.99,
+        "imgSrc": "images/rabbitBed.jpg",
         "stock_quantity": 15
     },
     {
         "name": "Guinea Pig Chew Toy Assortment",
         "department": "Small Mammals",
         "price": 19.80,
+        "imgSrc": "images/guineaPigToys.jpg",
         "stock_quantity": 15
     },
     {
         "name": "Guinea Pig Harness",
         "department": "Small Mammals",
         "price": 10.99,
+        "imgSrc": "images/gpHarness.jpg",
         "stock_quantity": 15
     },
     {
         "name": "Rabbit Mat Bed",
         "department": "Small Mammals",
         "price": 8.90,
+        "imgSrc": "images/rabbitMat.jpg",
         "stock_quantity": 15
     }
 ]
