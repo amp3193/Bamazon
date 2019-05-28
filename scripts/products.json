@@ -3,8 +3,9 @@
         "name": "Puppy Training Pads",
         "department": "Dogs",
         "price": 19.99,
+        "imgSrc": "images/puppypads.jpg",
         "stock_quantity": 15
-    },
+},
     {
         "name": "Large Dog Bed",
         "department": "Dogs",

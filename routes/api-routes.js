@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
 
-  // GET route for getting all of the todos
+  // all products
   app.get("/api/products/", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Product.findAll({})
