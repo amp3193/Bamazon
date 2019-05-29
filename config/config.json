@@ -17,7 +17,7 @@
     "username": "root",
     "password": "mouserug",
     "database": "bamazon",
-    "host": "127.0.0.1",
+    "use_env_variable": "DATABASE_URL",
     "dialect": "mysql"
   }
 }
