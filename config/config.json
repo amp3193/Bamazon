@@ -14,9 +14,9 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "mouserug",
-    "database": "bamazon",
+    "username": "sfonfcafnum8lzkh",
+    "password": "s2vceymzug442wf1",
+    "database": "ugtuscmdb6s2ltmy",
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
