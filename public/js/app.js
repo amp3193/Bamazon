@@ -7,12 +7,8 @@ function displayProductList(productList) {
     console.log(productList);
 
     // generate the HTML for all of the products that we received
-    let html = " ";
+    let html = "";
     for (let i = 0; i < productList.length; i++) {
-        if (i > 0) {
-            html += '<p class="divider" />'
-        }
-
         html += getProductHtml(productList[i]);
     }
 
@@ -34,30 +30,32 @@ function displayProductList(productList) {
 // generate the HTML for a single product
 function getProductHtml(product) {
     return `
-    <div class="card id="product-card">
-    <h3>${product.name}</h3>
-    <img src="${product.imgSrc}" style="width:100%"
-    <p id="product-price">Price: $${product.price} USD</p>
-    <p id="product-quantity">Available: ${product.stock_quantity}</p>
-    <p><button id="cart-btn-${product.id}">Add to Cart</button></p>
-    </p>
+    <div class="card" id="product-card">
+        <div class="card-content">
+            <h3 id="product-name">${product.name}</h3>
+            <img src="${product.imgSrc}" style="width:100%">
+        </div>
+        <div class="card-footer">
+            <p id="product-price">Price: $${product.price} USD</p>
+            <p id="product-quantity">Available: ${product.stock_quantity}</p>
+            <p><button id="cart-btn-${product.id}">Add to Cart</button></p>
+        </div>
+    </div>
     `
 }
 
 function displayCartForProduct(product) {
     console.log(product.id);
-
     // generate the HTML for buying a single product
     let html = `
-    <div>
-        <h2>Cart</h2>
-        <div class="modal-body">
-            <h3 id="product-name">${product.name}</h3>
-            <p id="product-price">Price: $${product.price} USD</p>
-            <p id="product-quantity">Available: ${product.stock_quantity}</p>
-            <input id="product-qty" name="quantity" type="number" min="1" max="99" value="1">
-        </div>
-        <div class="modal-footer">
+    <div id="cart">
+        <h2 id="cart-title">Cart</h2>
+        <h3 id="product-name-cart">${product.name}</h3>
+        <p id="product-price">Price: $${product.price} USD</p>
+        <p id="product-quantity">Available: ${product.stock_quantity}</p>
+        <input id="product-qty" name="quantity" type="number" min="1" max="99" value="1">
+        
+        <div class="cart-footer">
             <button type="button" id="cancel-btn" class="btn btn-secondary">Cancel</button>
             <button type="button" id="purchase-btn" class="btn btn-success">Purchase</button>
         </div>
@@ -79,12 +77,24 @@ function displayCartForProduct(product) {
 
 function handlePurchase(product, quantity) {
     console.log("handlePurchase: " + product.name + " x " + quantity);
-
-    // TODO request update database and reduce quantity
-
-    // TODO handle success (alert success message, then load product list)
-
-    // TODO handle failure (alert failure message, do NOT load product list)
+    $.ajax({
+        method: "PUT",
+        url: "/api/products/" + product.id,
+        data: {
+            quantity,
+        }
+    }).then(function(data) {
+        if (data) {
+            if (data.status) {
+                alert(`You purchased ${quantity}x ${product.name}`);
+                loadProductList();
+            } else if (data.error && data.error.errors && data.error.errors[0].message) {
+                alert(data.error.errors[0].message);
+            } else {
+                alert('Oops!')
+            }
+        }
+    });
 }
 
 loadProductList();

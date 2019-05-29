@@ -3,22 +3,17 @@ module.exports = function(sequelize, DataTypes) {
       name: DataTypes.STRING,
       department: DataTypes.STRING,
       price: DataTypes.FLOAT,
-      stock_quantity:DataTypes.INTEGER
+      imgSrc: DataTypes.STRING,
+      stock_quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          min: {
+            args: [0],
+            msg: "Insufficient Quantity"
+          }
+        }
+       } 
     });
     return Product;
   };
-
-
-// The Product model should have each of the following fields:
-
-
-// product_name (Name of product)
-
-
-// department_name
-
-
-// price (cost to customer)
-
-
-// stock_quantity (how much of the product is available in stores)
