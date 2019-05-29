@@ -8,16 +8,16 @@
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "password": "mouserug",
+    "database": "bamazon",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": "mouserug",
     "database": "bamazon",
-    "use_env_variable": "DATABASE_URL",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
